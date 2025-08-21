@@ -169,7 +169,7 @@
 
 <!-- Illustration Hero -->
 <div class="relative">
-  <div class="aspect-[4/3] rounded-2xl border shadow-soft overflow-hidden grid">
+  <div class="aspect-[4/3] rounded-2xl border shadow-soft overflow-hidden">
     <img
       src="assets/hero-wrapia.png"
       alt="IA santé futuriste regardant vers la gauche"
@@ -178,30 +178,20 @@
       decoding="async"
     />
   </div>
-</div>
 
-    <!-- Voile pour lisibilité du panneau -->
-    <div class="absolute inset-0 bg-white/20 lg:bg-white/30"></div>
+  <!-- Voile pour lisibilité du panneau -->
+  <div class="absolute inset-0 bg-white/20 lg:bg-white/30 pointer-events-none"></div>
 
-    <!-- Panneau texte (HTML pour SEO/Accessibilité) -->
-    <figcaption class="absolute right-4 top-4 bottom-4 hidden md:flex max-w-[60%] bg-white/90 backdrop-blur-sm rounded-xl p-5 flex-col justify-center gap-3">
-      <h3 class="text-xl font-bold">Pourquoi WRAPIA</h3>
-      <ul class="space-y-3 text-[#0C1B33]/90">
-        <li class="flex items-start gap-3">
-          <span class="mt-2 h-2.5 w-2.5 rounded-full" style="background:#3DDAD7"></span>
-          <span>Un écosystème SaaS modulaire</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="mt-2 h-2.5 w-2.5 rounded-full" style="background:#3DDAD7"></span>
-          <span>Une plateforme évolutive et adaptable à tout type d’usage en santé</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="mt-2 h-2.5 w-2.5 rounded-full" style="background:#3DDAD7"></span>
-          <span>Garantir la confiance et l’adoption par les soignants, patients et institutions.</span>
-        </li>
-      </ul>
-    </figcaption>
-  </figure>
+  <!-- Panneau texte -->
+  <figcaption
+    class="absolute right-4 top-4 bottom-4 hidden md:flex max-w-[60%] bg-white/90 backdrop-blur-sm rounded-xl p-5 flex-col justify-center gap-3 shadow-soft">
+    <h3 class="text-xl font-bold">Pourquoi WRAPIA</h3>
+    <ul class="list-disc pl-4 text-sm leading-relaxed text-[#0C1B33]/90">
+      <li>Un écosystème SaaS modulaire</li>
+      <li>Une plateforme évolutive et adaptable à tout type d’usage en santé</li>
+      <li>Garantir la confiance et l’adoption par les soignants, patients et institutions</li>
+    </ul>
+  </figcaption>
 </div>
     </section>
 
