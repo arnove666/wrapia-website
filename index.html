@@ -420,8 +420,8 @@
     });
   </script>
   
-  <!-- ===== Modals Solutions ===== -->
-<div class="modal" id="modal-plateforme" aria-hidden="true" role="dialog" aria-labelledby="modal-plateforme-title">
+<!-- ===== Modals Solutions ===== -->
+<div class="modal" id="modal-plateforme" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="modal-plateforme-title">
   <div class="modal__backdrop" data-modal-close></div>
   <div class="modal__content" role="document">
     <button class="modal__close" aria-label="Fermer" data-modal-close>&times;</button>
@@ -441,7 +441,7 @@
   </div>
 </div>
 
-<div class="modal" id="modal-agents" aria-hidden="true" role="dialog" aria-labelledby="modal-agents-title">
+<div class="modal" id="modal-agents" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="modal-agents-title">
   <div class="modal__backdrop" data-modal-close></div>
   <div class="modal__content" role="document">
     <button class="modal__close" aria-label="Fermer" data-modal-close>&times;</button>
@@ -461,7 +461,7 @@
   </div>
 </div>
 
-<div class="modal" id="modal-ethique" aria-hidden="true" role="dialog" aria-labelledby="modal-ethique-title">
+<div class="modal" id="modal-ethique" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="modal-ethique-title">
   <div class="modal__backdrop" data-modal-close></div>
   <div class="modal__content" role="document">
     <button class="modal__close" aria-label="Fermer" data-modal-close>&times;</button>
@@ -481,6 +481,7 @@
   </div>
 </div>
 
+<!-- JS : modals solutions -->
 <script>
 (function(){
   const openers = document.querySelectorAll('[data-modal-open]');
@@ -492,11 +493,11 @@
     if(!modal) return;
     lastFocused = document.activeElement;
     modal.setAttribute('aria-hidden','false');
-    // focus le titre
     const h3 = modal.querySelector('h3');
-    h3 && h3.focus && h3.setAttribute('tabindex','-1') && h3.focus();
+    if (h3) { h3.setAttribute('tabindex','-1'); h3.focus(); }
     document.body.style.overflow = 'hidden';
   }
+
   function closeModal(modal){
     modal.setAttribute('aria-hidden','true');
     document.body.style.overflow = '';
@@ -529,6 +530,7 @@
   });
 })();
 </script>
+
   
 </body>
 </html>
