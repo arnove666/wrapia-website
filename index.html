@@ -186,37 +186,35 @@
       </div>
     </section>
 
-<!-- ===== Solutions (WRAPIA) ===== -->
-<section id="solutions" class="section section--solutions">
-  <div class="container">
-    <h2 class="solutions__title">Solutions</h2>
-    <p class="solutions__subtitle">Trois briques pour accélérer ton organisation.</p>
+<section id="solutions" class="py-16 border-t">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl sm:text-3xl font-bold">Solutions</h2>
+    <p class="mt-2 text-[#0C1B33]/80">Trois briques pour accélérer ton organisation.</p>
 
-    <div class="solutions__grid">
-      <!-- Card 1 -->
-      <article class="card">
-        <div class="card__icon" aria-hidden="true">
-          <!-- Plateforme (cube empilé) -->
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Carte 1 -->
+      <article class="rounded-2xl border bg-white p-6 shadow-soft transition hover:-translate-y-0.5">
+        <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl" style="background:#3DDAD7">
+          <!-- icône cube -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" role="img">
             <path d="M12 2l8 4-8 4-8-4 8-4z" fill="#fff"/>
             <path d="M4 10l8 4 8-4v4l-8 4-8-4v-4z" fill="#fff" opacity=".85"/>
             <path d="M4 16l8 4 8-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3 class="card__title">Une plateforme unifiée santé + IA</h3>
-        <p class="card__text">
-          WRAPIA n’est pas un outil isolé mais un écosystème SaaS modulaire qui connecte la voix,
-          la donnée et l’orchestration. Elle centralise des briques spécialisées (call center, analyse,
-          suivi patient, intégrations API santé) dans un même environnement.
+        <h3 class="text-xl font-bold">Une plateforme unifiée santé + IA</h3>
+        <p class="mt-2 text-[#0C1B33]/80">
+          WRAPIA n’est pas un outil isolé mais un écosystème SaaS modulaire qui connecte la voix, la donnée et l’orchestration.
+          Elle centralise des briques spécialisées (call center, analyse, suivi patient, intégrations API santé) dans un même environnement.
         </p>
-        <!-- Fallback href=#faq si JS désactivé -->
-        <a class="card__link" href="#faq" data-modal-open="modal-plateforme">En savoir plus</a>
+        <a href="#demo" data-modal-open="modal-plateforme"
+           class="mt-3 inline-block font-semibold text-[#0C1B33] underline underline-offset-4">En savoir plus</a>
       </article>
 
-      <!-- Card 2 -->
-      <article class="card">
-        <div class="card__icon" aria-hidden="true">
-          <!-- Multi-agents (nœuds reliés) -->
+      <!-- Carte 2 -->
+      <article class="rounded-2xl border bg-white p-6 shadow-soft transition hover:-translate-y-0.5">
+        <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl" style="background:#3DDAD7">
+          <!-- icône nœuds -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" role="img">
             <circle cx="6" cy="6" r="3" fill="#fff"/>
             <circle cx="18" cy="6" r="3" fill="#fff" opacity=".9"/>
@@ -224,37 +222,36 @@
             <path d="M8.5 7.5l3 7M15.5 7.5l-3 7M9 6h6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3 class="card__title">Agents IA coordonnés</h3>
-        <p class="card__text">
-          Contrairement aux solutions classiques, WRAPIA s’appuie sur une architecture d’agents IA
-          coopérants (diagnostic, planning, communication, support administratif). Chaque agent agit
-          de manière autonome mais coordonnée via une logique n8n/IA, ce qui rend la plateforme
-          évolutive et adaptable à tout type d’usage en santé.
+        <h3 class="text-xl font-bold">Agents IA coordonnés</h3>
+        <p class="mt-2 text-[#0C1B33]/80">
+          Contrairement aux solutions classiques, WRAPIA s’appuie sur une architecture d’agents IA coopérants
+          (diagnostic, planning, communication, support administratif). Chaque agent agit de manière autonome
+          mais coordonnée via une logique n8n/IA, ce qui rend la plateforme évolutive et adaptable à tout type d’usage en santé.
         </p>
-        <a class="card__link" href="#faq" data-modal-open="modal-agents">En savoir plus</a>
+        <a href="#demo" data-modal-open="modal-agents"
+           class="mt-3 inline-block font-semibold text-[#0C1B33] underline underline-offset-4">En savoir plus</a>
       </article>
 
-      <!-- Card 3 -->
-      <article class="card">
-        <div class="card__icon" aria-hidden="true">
-          <!-- Souveraineté (bouclier) -->
+      <!-- Carte 3 -->
+      <article class="rounded-2xl border bg-white p-6 shadow-soft transition hover:-translate-y-0.5">
+        <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl" style="background:#3DDAD7">
+          <!-- icône bouclier -->
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" role="img">
             <path d="M12 3l7 2v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V5l7-2z" fill="#fff"/>
             <path d="M9 11l2 2 4-4" stroke="#0C1B33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
-        <h3 class="card__title">Santé éthique et souveraine</h3>
-        <p class="card__text">
-          WRAPIA ne se limite pas à la performance technique : la conformité santé (HDS, RGPD),
-          la transparence des algorithmes et l’hébergement souverain sont intégrés dès la conception.
-          Cela garantit confiance et adoption par les soignants, patients et institutions.
+        <h3 class="text-xl font-bold">Santé éthique et souveraine</h3>
+        <p class="mt-2 text-[#0C1B33]/80">
+          WRAPIA ne se limite pas à la performance technique : la conformité santé (HDS, RGPD), la transparence des algorithmes
+          et l’hébergement souverain sont intégrés dès la conception. Cela garantit confiance et adoption par les soignants, patients et institutions.
         </p>
-        <a class="card__link" href="#faq" data-modal-open="modal-ethique">En savoir plus</a>
+        <a href="#demo" data-modal-open="modal-ethique"
+           class="mt-3 inline-block font-semibold text-[#0C1B33] underline underline-offset-4">En savoir plus</a>
       </article>
     </div>
   </div>
 </section>
-
 
     <!-- Projets par métiers -->
     <section id="metiers" class="py-16 border-t">
