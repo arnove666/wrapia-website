@@ -352,6 +352,7 @@
       burger.setAttribute('aria-expanded', opened ? 'true' : 'false');
     });
   </script>
+  
   <!-- ===== Modals Solutions ===== -->
 <div class="modal" id="modal-plateforme" aria-hidden="true" role="dialog" aria-labelledby="modal-plateforme-title">
   <div class="modal__backdrop" data-modal-close></div>
@@ -413,5 +414,54 @@
   </div>
 </div>
 
+<script>
+(function(){
+  const openers = document.querySelectorAll('[data-modal-open]');
+  const closeSelectors = '[data-modal-close]';
+  let lastFocused = null;
+
+  function openModal(id){
+    const modal = document.getElementById(id);
+    if(!modal) return;
+    lastFocused = document.activeElement;
+    modal.setAttribute('aria-hidden','false');
+    // focus le titre
+    const h3 = modal.querySelector('h3');
+    h3 && h3.focus && h3.setAttribute('tabindex','-1') && h3.focus();
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(modal){
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    if(lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  openers.forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('data-modal-open');
+      if(id){ e.preventDefault(); openModal(id); }
+    });
+  });
+
+  document.addEventListener('click', (e)=>{
+    const target = e.target;
+    if(target.matches(closeSelectors)){
+      const modal = target.closest('.modal');
+      if(modal) closeModal(modal);
+    }
+    if(target.classList.contains('modal__backdrop')){
+      const modal = target.closest('.modal');
+      if(modal) closeModal(modal);
+    }
+  });
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.modal[aria-hidden="false"]').forEach(closeModal);
+    }
+  });
+})();
+</script>
+  
 </body>
 </html>
