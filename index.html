@@ -169,22 +169,25 @@
 
 <!-- Illustration Hero -->
 <div class="relative">
-  <div class="aspect-[4/3] rounded-2xl border shadow-soft overflow-hidden">
+  <div class="aspect-[4/3] rounded-2xl border shadow-soft overflow-hidden z-0">
     <img
       src="assets/hero-wrapia.png"
       alt="IA santé futuriste regardant vers la gauche"
       class="w-full h-full object-cover"
-      loading="lazy"
-      decoding="async"
+      loading="eager"
+      decoding="auto"
+      fetchpriority="high"
     />
   </div>
 
-  <!-- Voile pour lisibilité du panneau -->
-  <div class="absolute inset-0 bg-white/20 lg:bg-white/30 pointer-events-none"></div>
+  <!-- Voile pour lisibilité du panneau (léger) -->
+  <div
+    class="absolute inset-0 z-[1] bg-white/10 lg:bg-white/20 pointer-events-none"
+    aria-hidden="true"></div>
 
   <!-- Panneau texte -->
   <figcaption
-    class="absolute right-4 top-4 bottom-4 hidden md:flex max-w-[60%] bg-white/90 backdrop-blur-sm rounded-xl p-5 flex-col justify-center gap-3 shadow-soft">
+    class="absolute right-4 top-4 bottom-4 z-[2] hidden md:flex max-w-[60%] bg-white/90 backdrop-blur-sm rounded-xl p-5 flex-col justify-center gap-3 shadow-soft">
     <h3 class="text-xl font-bold">Pourquoi WRAPIA</h3>
     <ul class="list-disc pl-4 text-sm leading-relaxed text-[#0C1B33]/90">
       <li>Un écosystème SaaS modulaire</li>
@@ -193,6 +196,7 @@
     </ul>
   </figcaption>
 </div>
+
     </section>
 
 <section id="solutions" class="py-16 border-t">
