@@ -459,6 +459,48 @@
   </div>
 </div>
 
+ <!-- ===== Modal FAQ + Contact (annexe) ===== -->
+<div class="modal" id="modal-faq" aria-hidden="true" aria-modal="true" role="dialog" aria-labelledby="modal-faq-title">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__content" role="document">
+    <button class="modal__close" aria-label="Fermer" data-modal-close>&times;</button>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Colonne FAQ -->
+      <div>
+        <h2 id="modal-faq-title" class="text-2xl sm:text-3xl font-bold">FAQ</h2>
+        <div class="mt-6 space-y-4">
+          <details class="p-4 rounded-2xl border">
+            <summary class="cursor-pointer font-medium">WRAPIA est-il conforme santé ?</summary>
+            <p class="mt-2 text-[#0C1B33]/80">Oui, approche compatible HDS côté hébergement partenaire et RGPD by design.</p>
+          </details>
+          <details class="p-4 rounded-2xl border">
+            <summary class="cursor-pointer font-medium">Comment s’intègre WRAPIA ?</summary>
+            <p class="mt-2 text-[#0C1B33]/80">API/Webhook, Calendrier, VoIP (ex : Twilio en tuyau), CRM/ERP.</p>
+          </details>
+          <details class="p-4 rounded-2xl border">
+            <summary class="cursor-pointer font-medium">Quel ROI typique ?</summary>
+            <p class="mt-2 text-[#0C1B33]/80">Réduction coûts support et no-shows, + satisfaction patient, + dispo 24/7.</p>
+          </details>
+        </div>
+      </div>
+
+      <!-- Colonne Contact -->
+      <div class="p-6 rounded-2xl border shadow-soft">
+        <h2 class="text-2xl sm:text-3xl font-bold">Parler avec nous</h2>
+        <p class="mt-2 text-[#0C1B33]/80">Dis-moi ton besoin et on prépare une démo personnalisée.</p>
+        <form class="mt-6 grid gap-4" onsubmit="event.preventDefault(); alert('Merci ! Nous te recontactons vite.');">
+          <input type="text" required placeholder="Ton nom" class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring" />
+          <input type="email" required placeholder="Ton email" class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring" />
+          <textarea rows="4" placeholder="Ton message" class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring"></textarea>
+          <button type="submit" class="px-6 py-3 rounded-xl font-semibold" style="background:#3DDAD7;color:#0C1B33">Envoyer</button>
+          <p class="text-sm text-[#0C1B33]/70">Ou écris-nous : <a class="underline" href="mailto:contact@wrap-ia.com">contact@wrap-ia.com</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- JS : modal (ouvre/ferme + ESC + clic backdrop + focus) -->
 <script>
 (function(){
@@ -503,3 +545,6 @@
   });
 })();
 </script>
+
+</body>
+</html>
