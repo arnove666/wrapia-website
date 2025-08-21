@@ -167,23 +167,45 @@
           </div>
         </div>
 
-        <!-- Illustration simple -->
-        <div class="relative">
-          <div class="aspect-[4/3] rounded-2xl border shadow-soft grid place-items-center">
-            <!-- Avatar médecin IA (SVG minimal) -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" class="w-4/5">
-              <rect x="0" y="0" width="200" height="150" fill="#FFFFFF"/>
-              <circle cx="100" cy="56" r="26" fill="#3DDAD7"/>
-              <rect x="60" y="92" width="80" height="36" rx="12" fill="#0C1B33"/>
-              <rect x="88" y="102" width="24" height="6" rx="3" fill="#3DDAD7"/>
-              <rect x="98" y="108" width="4" height="12" rx="2" fill="#3DDAD7"/>
-              <circle cx="92" cy="52" r="4" fill="#0C1B33"/>
-              <circle cx="108" cy="52" r="4" fill="#0C1B33"/>
-              <path d="M90 64 C100 70 110 70 120 64" stroke="#0C1B33" stroke-width="3" fill="none" />
-            </svg>
-          </div>
-        </div>
-      </div>
+<!-- Illustration hero : Robot IA + bullets overlay -->
+<div class="relative">
+  <figure class="relative aspect-[4/3] rounded-2xl overflow-hidden border shadow-soft">
+    <!-- Image responsive -->
+    <picture>
+      <!-- (Optionnel) AVIF si tu en as une -->
+      <!-- <source srcset="assets/hero-wrapia.avif 1x, assets/hero-wrapia@2x.avif 2x" type="image/avif"> -->
+      <source srcset="assets/hero-wrapia.webp 1x, assets/hero-wrapia@2x.webp 2x" type="image/webp">
+      <img
+        src="assets/hero-wrapia.webp"
+        alt="Robot clinicien IA regardant vers la gauche"
+        class="absolute inset-0 h-full w-full object-cover"
+        width="1600" height="1200"
+        loading="eager" decoding="async" />
+    </picture>
+
+    <!-- Voile pour lisibilité du panneau -->
+    <div class="absolute inset-0 bg-white/20 lg:bg-white/30"></div>
+
+    <!-- Panneau texte (HTML pour SEO/Accessibilité) -->
+    <figcaption class="absolute right-4 top-4 bottom-4 hidden md:flex max-w-[60%] bg-white/90 backdrop-blur-sm rounded-xl p-5 flex-col justify-center gap-3">
+      <h3 class="text-xl font-bold">Pourquoi WRAPIA</h3>
+      <ul class="space-y-3 text-[#0C1B33]/90">
+        <li class="flex items-start gap-3">
+          <span class="mt-2 h-2.5 w-2.5 rounded-full" style="background:#3DDAD7"></span>
+          <span>Un écosystème SaaS modulaire</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-2 h-2.5 w-2.5 rounded-full" style="background:#3DDAD7"></span>
+          <span>Une plateforme évolutive et adaptable à tout type d’usage en santé</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-2 h-2.5 w-2.5 rounded-full" style="background:#3DDAD7"></span>
+          <span>Garantir la confiance et l’adoption par les soignants, patients et institutions.</span>
+        </li>
+      </ul>
+    </figcaption>
+  </figure>
+</div>
     </section>
 
 <section id="solutions" class="py-16 border-t">
