@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WRAPIA — Assistant médical IA 24/7</title>
+  <meta name="description" content="WRAPIA automatise vos appels patients et optimise vos rendez-vous, 24/7." />
+
+  <!-- Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Play CDN (OK pour MVP Netlify). Pour prod avancée, passer au build Tailwind. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { mont: ['Montserrat','ui-sans-serif','system-ui','sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root{
+      --wr-dark:#0C1B33;
+      --wr-accent:#3DDAD7;
+      --wr-bg:#FFFFFF;
+    }
+    /* Améliorations mineures d’UX */
+    ::selection{ background: var(--wr-accent); color:#0C1B33; }
+    .shadow-soft{ box-shadow: 0 8px 24px rgba(12,27,51,0.06); }
+  </style>
+</head>
+<body class="font-mont bg-white text-[#0C1B33]">
+  <!-- Lien d'évitement -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-3 py-2 rounded-md border">Aller au contenu</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2" aria-label="WRAPIA - Accueil">
+        <!-- Placeholder logo typographique -->
+        <div class="w-8 h-8 rounded-lg" style="background:#3DDAD7"></div>
+        <span class="text-xl font-semibold tracking-tight" style="color:#0C1B33">WRAPIA</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#" class="hover:opacity-80">Accueil</a>
+        <a href="#solutions" class="hover:opacity-80">Solutions</a>
+        <a href="#metiers" class="hover:opacity-80">Projets par métiers</a>
+        <a href="#contact" class="hover:opacity-80">Contact</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden md:block">
+        <a href="#demo" class="inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium"
+           style="background:#3DDAD7;color:#0C1B33">Essayer WRAPIA</a>
+      </div>
+
+      <!-- Mobile burger -->
+      <button id="burger" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="#0C1B33">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t">
+      <nav class="px-4 py-3 space-y-2">
+        <a href="#" class="block py-2">Accueil</a>
+        <a href="#solutions" class="block py-2">Solutions</a>
+        <a href="#metiers" class="block py-2">Projets par métiers</a>
+        <a href="#contact" class="block py-2">Contact</a>
+        <a href="#demo" class="inline-flex items-center justify-center px-4 py-2 rounded-xl font-medium mt-2 w-full text-center"
+           style="background:#3DDAD7;color:#0C1B33">Essayer WRAPIA</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="relative">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+            L’IA qui répond à tes patients 24/7
+          </h1>
+          <p class="mt-4 text-lg text-[#0C1B33]/80">
+            Réduis tes coûts, augmente la satisfaction, simplifie la gestion des rendez‑vous.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#demo" class="px-6 py-3 rounded-xl font-semibold shadow-soft"
+               style="background:#3DDAD7;color:#0C1B33">Demander une démo gratuite</a>
+            <a href="#solutions" class="px-6 py-3 rounded-xl font-semibold border"
+               style="border-color:#0C1B33;color:#0C1B33">Découvrir nos solutions</a>
+          </div>
+        </div>
+
+        <!-- Illustration simple -->
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-2xl border shadow-soft grid place-items-center">
+            <!-- Avatar médecin IA (SVG minimal) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" class="w-4/5">
+              <rect x="0" y="0" width="200" height="150" fill="#FFFFFF"/>
+              <circle cx="100" cy="56" r="26" fill="#3DDAD7"/>
+              <rect x="60" y="92" width="80" height="36" rx="12" fill="#0C1B33"/>
+              <rect x="88" y="102" width="24" height="6" rx="3" fill="#3DDAD7"/>
+              <rect x="98" y="108" width="4" height="12" rx="2" fill="#3DDAD7"/>
+              <circle cx="92" cy="52" r="4" fill="#0C1B33"/>
+              <circle cx="108" cy="52" r="4" fill="#0C1B33"/>
+              <path d="M90 64 C100 70 110 70 120 64" stroke="#0C1B33" stroke-width="3" fill="none" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions -->
+    <section id="solutions" class="py-16 border-t">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold">Solutions</h2>
+        <p class="mt-2 text-[#0C1B33]/80">Trois briques pour accélérer ton organisation.</p>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <article class="p-6 rounded-2xl border shadow-soft">
+            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7;color:#0C1B33">
+              <!-- icône calendrier -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0C1B33"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M4 11h16M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">RDV automatisé</h3>
+            <p class="mt-2 text-[#0C1B33]/80">Confirme, décale ou annule les rendez‑vous sans effort.</p>
+            <a href="#contact" class="mt-4 inline-flex items-center font-medium underline hover:opacity-80">En savoir plus</a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="p-6 rounded-2xl border shadow-soft">
+            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7;color:#0C1B33">
+              <!-- icône casque -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0C1B33"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 18v-6a9 9 0 1118 0v6M21 18a3 3 0 01-3 3h-3v-6h6v3zM3 18a3 3 0 003 3h3v-6H3v3z"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">Centre d’appels IA</h3>
+            <p class="mt-2 text-[#0C1B33]/80">Traitement intelligent des appels, sans attente.</p>
+            <a href="#contact" class="mt-4 inline-flex items-center font-medium underline hover:opacity-80">En savoir plus</a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="p-6 rounded-2xl border shadow-soft">
+            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7;color:#0C1B33">
+              <!-- icône analytics -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0C1B33"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V6m-4 13V10m8 9V4m4 15V8"/></svg>
+            </div>
+            <h3 class="font-semibold text-lg">Analyse patients</h3>
+            <p class="mt-2 text-[#0C1B33]/80">Des insights clairs pour améliorer le suivi médical.</p>
+            <a href="#contact" class="mt-4 inline-flex items-center font-medium underline hover:opacity-80">En savoir plus</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets par métiers -->
+    <section id="metiers" class="py-16 border-t">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold">Projets par métiers</h2>
+        <p class="mt-2 text-[#0C1B33]/80">Des bénéfices concrets pour chaque secteur.</p>
+
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Médecins -->
+          <div class="p-6 rounded-2xl border shadow-soft">
+            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7">
+              <span class="font-bold text-sm" style="color:#0C1B33">MD</span>
+            </div>
+            <h3 class="font-semibold">Médecins</h3>
+            <p class="mt-2 text-[#0C1B33]/80">Moins d’appels, plus de consultations utiles.</p>
+          </div>
+
+          <!-- Cliniques -->
+          <div class="p-6 rounded-2xl border shadow-soft">
+            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7">
+              <span class="font-bold text-sm" style="color:#0C1B33">CL</span>
+            </div>
+            <h3 class="font-semibold">Cliniques</h3>
+            <p class="mt-2 text-[#0C1B33]/80">No‑show en baisse, meilleure planification.</p>
+          </div>
+
+          <!-- Centres d’appels -->
+          <div class="p-6 rounded-2xl border shadow-soft">
+            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7">
+              <span class="font-bold text-sm" style="color:#0C1B33">CC</span>
+            </div>
+            <h3 class="font-semibold">Centres d’appels</h3>
+            <p class="mt-2 text-[#0C1B33]/80">Volume absorbé 24/7, qualité constante.</p>
+          </div>
+
+          <!-- Pharma -->
+          <div class="p-6 rounded-2xl border shadow-soft">
+            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7">
+              <span class="font-bold text-sm" style="color:#0C1B33">PH</span>
+            </div>
+            <h3 class="font-semibold">Pharma</h3>
+            <p class="mt-2 text-[#0C1B33]/80">Support patients & rappels automatisés.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Témoignages / Logos -->
+    <section class="py-16 border-t">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold">Ils nous font confiance</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <blockquote class="p-6 rounded-2xl border shadow-soft">
+            <p class="text-[#0C1B33]/90">“On a réduit de 35% les appels entrants dès le 1er mois.”</p>
+            <footer class="mt-3 text-sm text-[#0C1B33]/70">Cabinet — Lyon</footer>
+          </blockquote>
+          <blockquote class="p-6 rounded-2xl border shadow-soft">
+            <p class="text-[#0C1B33]/90">“Les confirmations automatiques ont fait chuter les no‑shows.”</p>
+            <footer class="mt-3 text-sm text-[#0C1B33]/70">Clinique — Bordeaux</footer>
+          </blockquote>
+          <blockquote class="p-6 rounded-2xl border shadow-soft">
+            <p class="text-[#0C1B33]/90">“Support 24/7 sans surcharge d’équipe.”</p>
+            <footer class="mt-3 text-sm text-[#0C1B33]/70">Centre d’appels — Lille</footer>
+          </blockquote>
+        </div>
+
+        <!-- Logos partenaires (placeholders) -->
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
+          <div class="h-10 bg-gray-100 rounded"></div>
+          <div class="h-10 bg-gray-100 rounded"></div>
+          <div class="h-10 bg-gray-100 rounded"></div>
+          <div class="h-10 bg-gray-100 rounded"></div>
+          <div class="h-10 bg-gray-100 rounded"></div>
+          <div class="h-10 bg-gray-100 rounded"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo + FAQ + Contact -->
+    <section id="demo" class="py-16 border-t">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12">
+        <!-- FAQ -->
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold">FAQ</h2>
+          <div class="mt-6 space-y-4">
+            <details class="p-4 rounded-xl border">
+              <summary class="cursor-pointer font-medium">WRAPIA est‑il conforme santé ?</summary>
+              <p class="mt-2 text-[#0C1B33]/80">Oui, approche compatible HDS côté hébergement partenaire et RGPD by design.</p>
+            </details>
+            <details class="p-4 rounded-xl border">
+              <summary class="cursor-pointer font-medium">Comment s’intègre WRAPIA ?</summary>
+              <p class="mt-2 text-[#0C1B33]/80">API/Webhook, Calendrier, VoIP (ex : Twilio en tuyau), CRM/ERP.</p>
+            </details>
+            <details class="p-4 rounded-xl border">
+              <summary class="cursor-pointer font-medium">Quel ROI typique ?</summary>
+              <p class="mt-2 text-[#0C1B33]/80">Réduction coûts support et no‑shows, + satisfaction patient, + dispo 24/7.</p>
+            </details>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div id="contact" class="p-6 rounded-2xl border shadow-soft">
+          <h2 class="text-2xl sm:text-3xl font-bold">Parler avec nous</h2>
+          <p class="mt-2 text-[#0C1B33]/80">Dis‑moi ton besoin et on prépare une démo personnalisée.</p>
+          <form class="mt-6 grid gap-4" onsubmit="event.preventDefault(); alert('Merci ! Nous te recontactons vite.');">
+            <input type="text" required placeholder="Ton nom" class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring" />
+            <input type="email" required placeholder="Ton email" class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring" />
+            <textarea rows="4" placeholder="Ton message" class="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring"></textarea>
+            <button type="submit" class="px-6 py-3 rounded-xl font-semibold"
+              style="background:#3DDAD7;color:#0C1B33">Envoyer</button>
+            <p class="text-sm text-[#0C1B33]/70">Ou écris‑nous : <a class="underline" href="mailto:contact@wrap-ia.com">contact@wrap-ia.com</a></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-md" style="background:#3DDAD7"></div>
+          <span class="font-semibold">WRAPIA</span>
+        </div>
+        <p class="mt-3 text-sm text-[#0C1B33]/70">Assistant médical IA 24/7.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Légal</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="#" class="underline">Mentions légales</a></li>
+          <li><a href="#" class="underline">CGV</a></li>
+          <li><a href="#" class="underline">Politique RGPD</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Navigation</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="#solutions" class="underline">Solutions</a></li>
+          <li><a href="#metiers" class="underline">Projets par métiers</a></li>
+          <li><a href="#contact" class="underline">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Réseaux</h4>
+        <div class="mt-3 flex gap-3">
+          <a href="#" aria-label="LinkedIn" class="p-2 rounded-md border"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="#0C1B33"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7 0h3.8v2.2h.1c.5-1 1.8-2.2 3.7-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.2c0-1.7 0-3.8-2.3-3.8-2.3 0-2.7 1.8-2.7 3.7V24h-4V8z"/></svg></a>
+          <a href="#" aria-label="X/Twitter" class="p-2 rounded-md border"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="#0C1B33"><path d="M20 3h-3l-4 6-4-6H6l6 9-6 9h3l4-6 4 6h3l-6-9 6-9z"/></svg></a>
+          <a href="mailto:contact@wrap-ia.com" aria-label="Email" class="p-2 rounded-md border">@</a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-xs text-[#0C1B33]/60 pb-8">© WRAPIA — 2025</div>
+  </footer>
+
+  <!-- JS : menu mobile -->
+  <script>
+    const burger = document.getElementById('burger');
+    const mobile = document.getElementById('mobile-menu');
+    burger?.addEventListener('click', () => {
+      const opened = mobile.classList.toggle('hidden') === false;
+      burger.setAttribute('aria-expanded', opened ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>
