@@ -119,48 +119,75 @@
       </div>
     </section>
 
-    <!-- Solutions -->
-    <section id="solutions" class="py-16 border-t">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl sm:text-3xl font-bold">Solutions</h2>
-        <p class="mt-2 text-[#0C1B33]/80">Trois briques pour accélérer ton organisation.</p>
+<!-- ===== Solutions (WRAPIA) ===== -->
+<section id="solutions" class="section section--solutions">
+  <div class="container">
+    <h2 class="solutions__title">Solutions</h2>
+    <p class="solutions__subtitle">Trois briques pour accélérer ton organisation.</p>
 
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <article class="p-6 rounded-2xl border shadow-soft">
-            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7;color:#0C1B33">
-              <!-- icône calendrier -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0C1B33"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3M4 11h16M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"/></svg>
-            </div>
-            <h3 class="font-semibold text-lg">RDV automatisé</h3>
-            <p class="mt-2 text-[#0C1B33]/80">Confirme, décale ou annule les rendez‑vous sans effort.</p>
-            <a href="#contact" class="mt-4 inline-flex items-center font-medium underline hover:opacity-80">En savoir plus</a>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="p-6 rounded-2xl border shadow-soft">
-            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7;color:#0C1B33">
-              <!-- icône casque -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0C1B33"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 18v-6a9 9 0 1118 0v6M21 18a3 3 0 01-3 3h-3v-6h6v3zM3 18a3 3 0 003 3h3v-6H3v3z"/></svg>
-            </div>
-            <h3 class="font-semibold text-lg">Centre d’appels IA</h3>
-            <p class="mt-2 text-[#0C1B33]/80">Traitement intelligent des appels, sans attente.</p>
-            <a href="#contact" class="mt-4 inline-flex items-center font-medium underline hover:opacity-80">En savoir plus</a>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="p-6 rounded-2xl border shadow-soft">
-            <div class="w-10 h-10 rounded-lg grid place-items-center mb-4" style="background:#3DDAD7;color:#0C1B33">
-              <!-- icône analytics -->
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="#0C1B33"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19V6m-4 13V10m8 9V4m4 15V8"/></svg>
-            </div>
-            <h3 class="font-semibold text-lg">Analyse patients</h3>
-            <p class="mt-2 text-[#0C1B33]/80">Des insights clairs pour améliorer le suivi médical.</p>
-            <a href="#contact" class="mt-4 inline-flex items-center font-medium underline hover:opacity-80">En savoir plus</a>
-          </article>
+    <div class="solutions__grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <!-- Plateforme (cube empilé) -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" role="img">
+            <path d="M12 2l8 4-8 4-8-4 8-4z" fill="#fff"/>
+            <path d="M4 10l8 4 8-4v4l-8 4-8-4v-4z" fill="#fff" opacity=".85"/>
+            <path d="M4 16l8 4 8-4" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
         </div>
-      </div>
-    </section>
+        <h3 class="card__title">Une plateforme unifiée santé + IA</h3>
+        <p class="card__text">
+          WRAPIA n’est pas un outil isolé mais un écosystème SaaS modulaire qui connecte la voix,
+          la donnée et l’orchestration. Elle centralise des briques spécialisées (call center, analyse,
+          suivi patient, intégrations API santé) dans un même environnement.
+        </p>
+        <!-- Fallback href=#faq si JS désactivé -->
+        <a class="card__link" href="#faq" data-modal-open="modal-plateforme">En savoir plus</a>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <!-- Multi-agents (nœuds reliés) -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" role="img">
+            <circle cx="6" cy="6" r="3" fill="#fff"/>
+            <circle cx="18" cy="6" r="3" fill="#fff" opacity=".9"/>
+            <circle cx="12" cy="18" r="3" fill="#fff" opacity=".9"/>
+            <path d="M8.5 7.5l3 7M15.5 7.5l-3 7M9 6h6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="card__title">Agents IA coordonnés</h3>
+        <p class="card__text">
+          Contrairement aux solutions classiques, WRAPIA s’appuie sur une architecture d’agents IA
+          coopérants (diagnostic, planning, communication, support administratif). Chaque agent agit
+          de manière autonome mais coordonnée via une logique n8n/IA, ce qui rend la plateforme
+          évolutive et adaptable à tout type d’usage en santé.
+        </p>
+        <a class="card__link" href="#faq" data-modal-open="modal-agents">En savoir plus</a>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <!-- Souveraineté (bouclier) -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" role="img">
+            <path d="M12 3l7 2v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V5l7-2z" fill="#fff"/>
+            <path d="M9 11l2 2 4-4" stroke="#0C1B33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="card__title">Santé éthique et souveraine</h3>
+        <p class="card__text">
+          WRAPIA ne se limite pas à la performance technique : la conformité santé (HDS, RGPD),
+          la transparence des algorithmes et l’hébergement souverain sont intégrés dès la conception.
+          Cela garantit confiance et adoption par les soignants, patients et institutions.
+        </p>
+        <a class="card__link" href="#faq" data-modal-open="modal-ethique">En savoir plus</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 
     <!-- Projets par métiers -->
     <section id="metiers" class="py-16 border-t">
